@@ -1,0 +1,253 @@
+﻿div.Empty_20 {
+    width: 100%;
+    height: 20px;
+    margin: auto;
+    padding: 0;
+    clear: left, right;
+}
+
+div.Empty_50 {
+    width: 100%;
+    height: 50px;
+    margin: auto;
+    padding: 0;
+}
+
+ul.HeadMenu {
+    list-style-type: none;
+    margin: auto;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(33, 154, 6);
+    width: 100%;
+    height: 50px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: flex; /* 使用 Flex 布局 */
+    justify-content: center; /* 水平方向居中对齐 */
+}
+
+li.HeadMenu_Content {
+    float: left;
+    min-width: 15%;
+}
+
+a.LinkTo {
+    display: block;
+    margin: 0;
+    padding: 13px;
+    background-color: rgb(33, 154, 6);
+    color: white;
+    text-decoration: none;
+    height: 50px;
+    text-align: center;
+}
+
+    a.LinkTo:hover {
+        background-color: #333;
+        color: white;
+    }
+
+div.HeadPicture {
+    width: 100%;
+    height: 50%;
+    background-image: url('whu1.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: auto;
+    padding: 0px;
+    display: flex; /* 使用 Flex 布局 */
+    justify-content: center; /* 水平方向居中对齐 */
+    align-items: center; /* 竖直方向居中对齐 */
+}
+
+div.HeadWord {
+    color: rgb(0, 0, 0);
+    font-size: 35px;
+    font-weight: 600;
+    text-align: center;
+}
+
+div.HeadWordName {
+    color: rgb(0, 0, 0);
+    font-size: 25px;
+    font-weight: 450;
+    text-align: center;
+}
+
+div.WhitePart {
+    display: flex; /* 使用 Flex 布局 */
+    justify-content: center; /* 水平方向居中对齐 */
+
+    width: 100%;
+    height: auto;
+    background-color: white;
+    margin: auto;
+    padding: 0px;
+}
+
+div.GreyPart {
+    display: flex; /* 使用 Flex 布局 */
+    justify-content: center; /* 水平方向居中对齐 */
+
+    width: 100%;
+    height: auto;
+    background-color: rgb(242, 242, 242);
+    margin: auto;
+    padding: 0px;
+}
+
+div.MainText_Title {
+    color: grey;
+    width: 100%;
+    font-size: 35px;
+    font-weight: 400;
+    text-align: center;
+}
+
+div.MainText_Title_small {
+    color: black;
+    width: 50%;
+    font-size: 30px;
+    font-weight: 400;
+    text-align: left;
+}
+
+div.MainText_Content {
+    color: black;
+    width: 50%;
+    font-size: 17px;
+    font-weight: 300;
+    text-align: justify;
+    line-height: 1.5
+}
+
+a.LinkToISPRS {
+    font-size: 20px;
+    font-weight: 200;
+    color: black;
+    text-align: center;
+}
+
+    a.LinkToISPRS:active {
+        font-size: 20px;
+        font-weight: 200;
+        color: red;
+        text-align: center;
+    }
+
+    a.LinkToISPRS:visited {
+        font-size: 20px;
+        font-weight: 200;
+        color: purple;
+        text-align: center;
+    }
+
+td.SHOWDETAILS {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 250;
+}
+
+a.LinkToBeDOI {
+    font-size: 20px;
+    font-weight: 200;
+    color: black;
+    text-align: center;
+}
+
+    a.LinkToBeDOI:active {
+        font-size: 20px;
+        font-weight: 200;
+        color: red;
+        text-align: center;
+    }
+
+    a.LinkToBeDOI:visited {
+        font-size: 20px;
+        font-weight: 200;
+        color: purple;
+        text-align: center;
+    }
+
+td.Experiments {
+    text-align: center; /* 文字水平居中对齐 */
+    vertical-align: middle; /* 文字垂直居中对齐 */
+    padding: 10px; /* 设置内边距，以增加单元格的空白 */
+    border: 1px solid #333;
+}
+
+div.End {
+    display: flex; /* 使用 Flex 布局 */
+    justify-content: center; /* 水平方向居中对齐 */
+
+    width: 100%;
+    height: auto;
+    background-color: rgb(67, 67, 67);
+    margin: auto;
+    padding: 0px;
+}
+
+div.tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+    div.tooltip .tooltiptext {
+        visibility: hidden;
+        width: auto;
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        font-size: 10px;
+        border-radius: 6px;
+        padding: 5px;
+        position: absolute;
+        z-index: 1;
+        bottom: 125%; /* 放置在文本上方 */
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+
+    div.tooltip:hover .tooltiptext {
+        visibility: visible;
+        opacity: 1;
+    }
+
+div.MainText_Content_End {
+    color: black;
+    width: 50%;
+    font-size: 20px;
+    font-weight: 300;
+    text-align: center;
+    line-height: 1.5
+}
+
+div.Video {
+    display: flex; /* 使用 Flex 布局 */
+    justify-content: center; /* 水平方向居中对齐 */
+
+    width: 50%;
+    height: auto;
+    background-color: white;
+    margin: auto;
+    padding: 0px;
+}
+
+table.Table {
+    width: 50%;
+    border-collapse: collapse;
+}
+
+image.Image {
+    width: 50%;
+    height: auto;
+    display: block;
+    margin: auto
+}
