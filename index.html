@@ -1,0 +1,475 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" type="text/css" href="ICRAv1.css">
+    <style>
+        @media screen and (max-width: 800px) {
+            .leftcolumn, .rightcolumn {
+                width: 100%;
+                padding: 0;
+            }
+        }
+
+        /* 响应式布局 -屏幕尺寸小于 400px 时，导航等布局改为上下布局 */
+        @media screen and (max-width: 400px) {
+            .guide_a a {
+                float: none;
+                width: 100%;
+            }
+        }
+
+        a.LinkToV1 {
+            color: blue;
+            font-weight: 200;
+        }
+
+        /* 设置视频样式 */
+        video {
+            width: 100%; /* 视频宽度占据容器的100% */
+            height: auto; /* 根据宽度自动调整高度 */
+        }
+
+        div.Div {
+            color: black;
+            width: 800px;
+            margin: auto auto auto auto;
+            padding: 20px;
+            text-align: justify;
+        }
+
+        div.Div-down {
+            color: black;
+            width: 800px;
+            margin: auto auto auto auto;
+            padding: 25px;
+            text-align: justify;
+        }
+
+        div.Div-Title {
+            color: black;
+            width: 800px;
+            margin: auto auto auto auto;
+            padding: 0px;
+            text-align: left;
+            font-size: 25px;
+            font-weight: 400;
+        }
+
+        div.Div-Table {
+            color: black;
+            width: 800px;
+            margin: auto auto auto auto;
+            padding: 5px;
+            text-align: center;
+        }
+
+        td.Table-Image {
+            text-align: center; /* 水平居中 */
+            vertical-align: middle; /* 垂直居中 */
+        }
+
+        /*仅对于重建表格*/
+        #recon-table td:first-child {
+            border-right: 2px solid black;
+        }
+    </style>
+
+    <title>
+        On-the-Fly SfM: What you capture is What you get
+    </title>
+</head>
+<body>
+    <!-- 头部导航栏 -->
+    <ul class="HeadMenu">
+        <li class="HeadMenu_Content"><a class="LinkTo" href="#Abstract">Abstract</a></li>
+        <li class="HeadMenu_Content"><a class="LinkTo" href="#Download">Download</a></li>
+        <li class="HeadMenu_Content"><a class="LinkTo" href="#Video">Video</a></li>
+        <li class="HeadMenu_Content"><a class="LinkTo" href="#Experiments">Experiments</a></li>
+        <li class="HeadMenu_Content"><a class="LinkTo" href="#Acknowledgement">Acknowledgement</a></li>
+        <li class="HeadMenu_Content"><a class="LinkTo" href="#About us">About us</a></li>
+    </ul>
+
+    <!-- 占位符 -->
+    <div class="Empty_50"></div>
+
+    <!-- 主标题 -->
+    <div class="HeadWord">
+        <!-- 占位符 -->
+        <div class="Empty_50"></div>
+        On-the-Fly SfM: What you capture is What you get
+        <!-- 占位符 -->
+        <div class="Empty_50"></div>
+    </div>
+
+    <div class="HeadWordName">
+        Zongqian Zhan, Rui Xia<sup>*</sup>, Yifei Yu, Yibo Xu, Xin Wang<sup>*</sup>
+        <!-- 占位符 -->
+        <div class="Empty_20"></div>
+        <em>School of Geodesy and Geomatics, Wuhan University, Wuhan, P.R.China</em>
+    </div>
+
+    <!-- 占位符 -->
+    <div class="Empty_20"></div>
+
+    <!-- Overview -->
+    <div class="WhitePart">
+        <table>
+            <tr>
+                <td class="Table-Image"><img src="Overview.png" width="425" height="185"></td>
+                <td class="Table-Image"><img src="camfi.jpg" width="460" height="185"></td>
+            </tr>
+            <tr>
+                <td class="Table-Image">The proposed on-the-fly SfM</td>
+                <td class="Table-Image">Hardware</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Abstract -->
+    <div class="WhitePart">
+        <div class="MainText_Title"><br><section id="Abstract">Abstract</section></div>
+    </div>
+    <div class="Div">
+        Over the last decades, ample achievements have been made on Structure from motion (SfM).
+        However, the vast majority of them basically work in an offline manner, i.e.,
+        images are firstly captured and then fed together into a SfM pipeline for obtaining poses and sparse point cloud.
+        <br><br>
+        In this work, on the contrary, we present an on-the-fly SfM: running online SfM while image capturing,
+        the newly taken On-the-Fly image is online estimated with the corresponding pose and points, i.e., what you capture is what you get.
+        <br><br>
+        More specifically, our approach firstly employs a vocabulary tree that is unsupervised trained using learning-based global features for fast image retrieval of newly fly-in image.
+        <br><br>
+        Then, a robust feature matching mechanism with least squares (LSM) is presented to improve image registration performance.
+        <br><br>
+        Finally, via investigating the influence of newly fly-in image’s connected neighboring images,
+        an efficient hierarchical weighted local bundle adjustment (BA) is used for optimization.
+        <br><br>
+    </div>
+
+    <!-- Download -->
+    <div class="WhitePart">
+        <div class="MainText_Title"><br><section id="Download">Download</section></div>
+        <br>
+    </div>
+
+    <div class="Div">
+        <table>
+            <tr>
+                <td colspan="5"><a href="On-the-fly SfM.pdf" color="blue">Paper(PDF,707KB)</a></td>
+            </tr>
+            <tr>
+                <td colspan="5"><a href="https://github.com/RayShark0605/On_the_fly_SfM" color="blue">Code(github)</a></td>
+            </tr>
+        </table>
+    </div>
+
+    <!--视频-->
+    <div class="Div">
+        <div class="MainText_Title"><section id="Video">Video</section></div>
+    </div>
+
+    <!-- 占位符 -->
+    <div class="Empty_20"></div>
+
+    <div class="Video">
+        <video controls>
+            <source src="On-the-Fly SfM（920素材）.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <!-- 占位符 -->
+    <div class="Empty_50"></div>
+
+    <!-- Experiments -->
+    <div class="WhitePart">
+        <div class="MainText_Title"><section id="Experiments">Experiments</section></div>
+    </div>
+    <div class="Div">
+        In this section, we report extensive experimental results on various datasets to demonstrate the capability of “what you capture is what you get” for our on-the-fly SfM.
+        <br><br>
+        All experiments are run on the machine with <b>16 CPU processors</b> and <b>RTX3080 GPU</b>.
+    </div>
+
+    <!-- Datasets -->
+    <div class="Div-Title">
+        1.Datasets<hr>
+    </div>
+
+    <div class="Div">
+        All the datasets used in our experiments are shown in the following Table:
+        <br>
+    </div>
+
+    <div class="WhitePart">
+        <table border="1" class="Table">
+            <tr>
+                <td class="Experiments">Name</td>
+                <td class="Experiments">Image Num</td>
+                <td class="Experiments">Source</td>
+            </tr>
+            <tr>
+                <td class="Experiments">SX</td>
+                <td class="Experiments">221</td>
+                <td class="Experiments" rowspan="2">Self-captured(Click me to download)</td>
+            </tr>
+            <tr>
+                <td class="Experiments">YX</td>
+                <td class="Experiments">349</td>
+            </tr>
+            <tr>
+                <td class="Experiments">fr1_desk</td>
+                <td class="Experiments">613</td>
+                <td class="Experiments" rowspan="3"><a href="https://cvg.cit.tum.de/data/datasets/rgbd-dataset">Tum (Sturm and Engelhard, 2012)</a></td>
+            </tr>
+            <tr>
+                <td class="Experiments">fr1_xyz</td>
+                <td class="Experiments">798</td>
+            </tr>
+            <tr>
+                <td class="Experiments">fr3_st_far</td>
+                <td class="Experiments">938</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Running Parameters -->
+    <div class="Div-Title">
+        <br>2.Running Parameters<hr>
+    </div>
+    <div class="Div">
+        In this work, some free parameters are empirically set.
+        <br><br>
+        For the online image matching, the vocabulary tree is with <b>5-layer depth</b> and <b>5 sub-clusters</b> for each node.
+        <br><br>
+        Each new fly-in images selects <b>Top-30</b> similar images for subsequent matching. The small local window in LSM is set as <b>15*15</b> pixels.
+        <br><br>
+        For efficient BA, as each image in the ripple has top-N candidate images which might return a large BA block,
+        only <b>top-8</b> similar images are considered. The constant weighting parameter <b><em>k</em> = 2</b> in all experiments.
+    </div>
+
+    <!-- 3.	Performance of fast image retrieval -->
+    <div class="Div-Title">
+        <br>3.Performance of fast image retrieval<hr>
+    </div>
+    <div class="Div">
+        Based on SX and fr3_st_far, we investigate three different image matching strategies: exhaustive matching using Colmap with default setting (<b>EM</b>),
+        exhaustive Euclidean comparison using learning-based global feature (Hou and Xia, 2023) (<b>EE</b>) and our on-the-fly SfM (<b>Ours</b>)
+        <br><br>
+        Here is time consuming result on fr3_st_far.
+    </div>
+
+    <div class="Div">
+        <img src="RetrievalTime.jpg" width="790" height="380">
+    </div>
+
+    <div class="Div">
+        Here is overlapping graph of SX.
+        <br>
+    </div>
+
+    <div class="WhitePart">
+        <table>
+            <tr>
+                <td><img src="Ours.png" width="275" height="275"></td>
+                <td><img src="EE.png" width="275" height="275"></td>
+                <td><img src="EM.png" width="275" height="275"></td>
+            </tr>
+            <tr>
+                <td class="Table-Image">Ours</td>
+                <td class="Table-Image">EE</td>
+                <td class="Table-Image">EM</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="Div">
+        Vertical and horizontal axis are image ID. The darker red the pixel is, the higher possibility the corresponding image pair overlaps with each other.
+        <br>
+    </div>
+
+
+    <!-- 4.Performance of efficient local bundle adjustment -->
+    <div class="Div-Title">
+        <br>4.Performance of efficient local bundle adjustment<hr>
+    </div>
+    <div class="Div">
+        To demonstrate the efficacy of the local bundle adjustment in our on-the-fly SfM, three bundle adjustment solutions are compared:
+        <br><br>
+        (1) a global bundle adjustment that enrolls all images is performed (<b>Glo.</b>)<br>
+        (2) a combined solution integrated with local and global bundle adjustment (<b>Com.</b>)<br>
+        (3) local bundle adjustment with hierarchical weights (<b>Ours</b>).<br><br>
+        Based on fr3_st_far, here is the cost time of bundle adjustment as the number of images changes
+        <br>
+    </div>
+
+    <div class="Div">
+        <img src="BATime.jpg" width="755" height="622">
+    </div>
+
+    <div class="Div">
+        For the quality of our local bundle adjustment solution, we choose three indicators: averaging mean reprojection error of each BA (<b>AMRE</b>),
+        mean reprojection error of final BA (<b>MFRE</b>) and mean track length (<b>MLT</b>).
+        <br><br>
+        The result of fr3_st_far are shown below:
+        <br>
+    </div>
+
+    <div class="WhitePart">
+        <table>
+            <tr>
+                <td><img src="AMRE&MFRE.png" width="472" height="275"></td>
+                <td><img src="MTL.png" width="397" height="275"></td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Sub-reconstructions -->
+    <div class="Div-Title">
+        <br>5.On-the-fly performance of our SfM<hr>
+    </div>
+    <div class="Div">
+        The table below presents the average processing time for all images of each dataset,
+        in particular, several key procedures are reported: image transmission (<b>IT</b>), feature extraction (<b>FE</b>), online image matching (<b>OIM</b>),
+        two-view geometric verification (<b>GV</b>), Image registration (<b>IR</b>), Triangulation (<b>Tri.</b>) and bundle adjustment (<b>BA</b>).
+        <br>
+    </div>
+
+    <div class="Div-Table">
+        COST TIME OF EACH CORE STAGE IN OURS SFM (MS)
+        <br>
+    </div>
+
+    <div class="WhitePart">
+        <table border="1" class="Table">
+            <tr>
+                <td class="Experiments">Dataset</td>
+                <td class="Experiments">SX</td>
+                <td class="Experiments">YX</td>
+                <td class="Experiments">fr1_desk</td>
+                <td class="Experiments">fr1_xyz</td>
+                <td class="Experiments">fr3_st_far</td>
+            </tr>
+            <tr>
+                <td class="Experiments">NoI</td>
+                <td class="Experiments">221</td>
+                <td class="Experiments">349</td>
+                <td class="Experiments">613</td>
+                <td class="Experiments">798</td>
+                <td class="Experiments">938</td>
+            </tr>
+            <tr>
+                <td class="Experiments">FE</td>
+                <td class="Experiments">617</td>
+                <td class="Experiments">625</td>
+                <td class="Experiments">157</td>
+                <td class="Experiments">155</td>
+                <td class="Experiments">172</td>
+            </tr>
+            <tr>
+                <td class="Experiments">OIM</td>
+                <td class="Experiments">1282</td>
+                <td class="Experiments">1391</td>
+                <td class="Experiments">872</td>
+                <td class="Experiments">911</td>
+                <td class="Experiments">1247</td>
+            </tr>
+            <tr>
+                <td class="Experiments">GV</td>
+                <td class="Experiments">1285</td>
+                <td class="Experiments">951</td>
+                <td class="Experiments">168</td>
+                <td class="Experiments">187</td>
+                <td class="Experiments">359</td>
+            </tr>
+            <tr>
+                <td class="Experiments">IR</td>
+                <td class="Experiments">91</td>
+                <td class="Experiments">72</td>
+                <td class="Experiments">41</td>
+                <td class="Experiments">56</td>
+                <td class="Experiments">72</td>
+            </tr>
+            <tr>
+                <td class="Experiments">Tri.</td>
+                <td class="Experiments">158</td>
+                <td class="Experiments">171</td>
+                <td class="Experiments">116</td>
+                <td class="Experiments">29</td>
+                <td class="Experiments">60</td>
+            </tr>
+            <tr>
+                <td class="Experiments">BA</td>
+                <td class="Experiments">190</td>
+                <td class="Experiments">131</td>
+                <td class="Experiments">74</td>
+                <td class="Experiments">184</td>
+                <td class="Experiments">198</td>
+            </tr>
+            <tr>
+                <td class="Experiments">Total</td>
+                <td class="Experiments">3623</td>
+                <td class="Experiments">3341</td>
+                <td class="Experiments">1428</td>
+                <td class="Experiments">1522</td>
+                <td class="Experiments">2108</td>
+            </tr>
+            <tr>
+                <td class="Experiments">IT</td>
+                <td class="Experiments">4200</td>
+                <td class="Experiments">4400</td>
+                <td class="Experiments">3500</td>
+                <td class="Experiments">3500</td>
+                <td class="Experiments">3500</td>
+            </tr>
+        </table>
+    </div>
+
+
+    <!-- Acknowledgement -->
+    <div class="WhitePart">
+        <div class="MainText_Title"><br><section id="Acknowledgement">Acknowledgement</section></div>
+    </div>
+    <div class="Div">
+        This work was jointly supported by the National Science Foundation of China (No. 61871295, 42301507) and 
+        Natural Science Foundation of Hubei Province, China (No. 2022CFB727) and ISPRS Initiatives 2023.
+    </div>
+
+    <!-- Reference -->
+    <div class="WhitePart">
+        <div class="MainText_Title"><br>Reference</div>
+    </div>
+    <div class="Div">
+        J. Sturm, N. Engelhard, F. Endres, W. Burgard, and D. Cremers, “A benchmark for the evaluation of RGB-D SLAM systems,”
+        in IEEE International Conference Intelligent. Robots System, 2012, pp. 573–580.
+        <br><br>
+        Q. Hou, R. Xia, J. Zhang, et al., “Learning visual overlapping image pairs for SfM via CNN fine-tuning with photogrammetric geometry information,”
+        in International Journal of Applied Earth Observations and Geoinformation, 2023, 103162.
+        <br><br>
+        Y. Yue, X. Wang and Z. Zhan, “Single-Point Least Square Matching Embedded Method for Improving Visual SLAM,” in IEEE Sensors Journal, 2023, pp. 16176-16188.
+    </div>
+
+    <!-- About us -->
+    <div class="WhitePart">
+        <div class="MainText_Title"><br><section id="About us">About us</section></div>
+    </div>
+    <div class="WhitePart">
+        <div class="Div">
+            If you have any questions or advice, you can contact us via following address:
+            <ul>
+                <li>zqzhan@sgg.whu.edu.cn, Zongqian Zhan, WuHan University</li>
+                <li>xwang@sgg.whu.edu.cn, Xin Wang, WuHan University</li>
+                <li>xiarui@whu.edu.cn, Rui Xia, WuHan University</li>
+                <li>yfyu2020@whu.edu.cn, YiFei Yu, WuHan University</li>
+                <li>ybxusgg@whu.edu.cn, Yibo Xu, WuHan University</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="WhitePart">
+        <div class="Empty_50"></div>
+    </div>
+</body>
+</html>
